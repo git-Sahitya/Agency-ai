@@ -2,7 +2,7 @@ import { useState } from "react"
 import Navbar from "./components/Navbar"
 
 function App() {
-   let [theme,setTheme]=useState("light")
+   let [theme,setTheme]=useState(localStorage.getItem('theme')? localStorage.getItem('theme'):"light")
    
   return (
     <div className="dark:bg-black relative">

@@ -8,8 +8,8 @@ const Navbar = ({ theme, setTheme }) => {
 
   return (
     <div
-      className="flex justify-between items-center px-4 sm:px-12 lg:px-24 xl:px-40 py-4 sticky top-0 
-    z-20 backdrop-blur-xl font-medium bg-white/50 dark:bg-gray-700/80"
+      className={`flex justify-between items-center px-4 sm:px-12 lg:px-24 xl:px-40 py-4 sticky top-0 
+    z-20 backdrop-blur-xl font-medium ${theme === 'dark' ? 'bg-gray-700/80 text-white' : 'bg-white text-black'}`}
     >
       <img
         src={theme === "dark" ? assets.logo_dark : assets.logo}
@@ -24,10 +24,10 @@ const Navbar = ({ theme, setTheme }) => {
 
          <img src={assets.close_icon} className="w-5 absolute right-4  top-4 sm:hidden" onClick={()=> setSidebarOpen(false)} />
 
-        <a onClick={()=> setSidebarOpen(false)} href="#" className="sm-hover:border-b"> Home</a>
-        <a onClick={()=> setSidebarOpen(false)} href="#services" className="sm-hover:border-b">Services</a>
-        <a onClick={()=> setSidebarOpen(false)} href="#our-work" className="sm-hover:border-b">Our Work</a>
-        <a onClick={()=> setSidebarOpen(false)} href="#contact-us" className="sm-hover:border-b">Contact Us</a>
+        <a onClick={()=> setSidebarOpen(false)} href="#" className={`sm-hover:border-b ${theme === "dark"? "text-white": "text-black"}` } > Home</a>
+        <a onClick={()=> setSidebarOpen(false)} href="#services" className={`sm-hover:border-b ${theme === "dark"? "text-white": "text-black"}` }>Services</a>
+        <a onClick={()=> setSidebarOpen(false)} href="#our-work" className={`sm-hover:border-b ${theme === "dark"? "text-white": "text-black"}` }>Our Work</a>
+        <a onClick={()=> setSidebarOpen(false)} href="#contact-us" className={`sm-hover:border-b ${theme === "dark"? "text-white": "text-black"}` }>Contact Us</a>
       </div>
 
       <div className="flex items-center gap-2 sm:gap-4">
